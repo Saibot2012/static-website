@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMMA</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<html>
+    <body class="fade-in">
+        <main>
+            <nav>
+                <ul>
+                    <li id="logo"><a href="index.html"><img src="/photos/logo16k.jpg" alt="logo image"></a></li>
+                    <li class="marg"><a href="index.html">Home</a></li>
+                    <li class="marg"><a href="about_me.html">About Me</a></li>
+                    <li class="marg"><a href="Projects.html">Projects</a></li>
+                    <li class="marg"><a href="photo.html">Photography</a></li>
+                </ul>
+            </nav>
+            <section class="intro">
+                <h1 class="big_text fade-in">EMMA</h1>
+                <p class="small_text fade-in dood">
+                    A smart walking stick designed to assist visually impaired users with navigation and safety. The project focused on integrating sensors, programming, and user-centered design to enhance mobility.
+                </p>
+                <br>
+                <p class="small_text fade-in" id="m">Project type: Group</p>
+                <div class="lets_go_btn fade-in" id="about_btn">
+                    <button><a href="emma.html#tools"><p>Let's Go!</p></a></button>
+                </div>
+            </section>
+            <div id="tools"></div>
+            <div class="tools_intro">
+                <h1>Tools used</h1>
+            </div>
+            <section class="tools_used">
+                <div class="Py1">
+                    <img src="/photos/Python-Emblem.png" alt="C#"><h2>Python</h2>
+                </div>
+                <div class="BB1">
+                    <img src="/photos/beagle.png" alt="CSS"><h2>Beaglebone Black</h2>
+                </div>
+
+            </section>
+            <div class="container_box">
+                <section class="project_containers first_box joke">
+                    <h1>
+                        Smart Wellbeing System
+                    </h1>
+                    <p>
+                        With the press of a button, the device would display a joke on the OLED to entertain the user. The jokes would be chosen from my jokes bank, so no same joke will be displayed twice.​
+                        <br><br>
+                        Upon the press of the second button, a friendly tune will be played to entertain the user. 
+                    </p>
+                    <img src="/photos/joke.png" alt="smart wellbeing">
+
+                </section>
+                <section class="project_containers second_box joke">
+                    <h1>
+                        Smart Sedentary Alarm 
+                    </h1>
+                    <p>
+                        When the keylock is turned, a timer will start. When it rings, the buzzer will beep to indicate that they should take a break. They can turn the keylock again to restart the timer.​
+                        <br><br>
+                        The device is installed on the walking stick to warn users when they should stop to take a break
+                    </p>
+                    <img src="/photos/timer.png" alt="Sedentary">
+                </section>
+            </div>
+           <div class="container_box">
+                <section class="project_containers first_box joke">
+                    <h1>Smart distance tracker</h1>
+                    <p>
+                        ​The distance tracker is designed to be able to sense oncoming dangers via the use of a proximity sensor. ​​
+                        <br><br>
+                        As something gets closer to the distance tracker, it will display the danger and proximity in its respective color and number of bars lit up. The buzzer will also begin buzzing to indicate danger if the hazard gets too close.
+                    </p>
+                    <img src="/photos/dist.png" alt="Distance tracker">
+                </section>
+                <section class="project_containers second_box joke">
+                    <h1>Smart Pillbox System</h1>
+                    <p>
+                        The Smart Pill Box is intended to tell the user when they would have to take their medication.​​​​The REED sensor is intended to detect when the lid of the pill box is opened, so it can indicate that the user’s medication has been taken.
+                        <br><br>
+                        An 8x8 display is also used to indicate the duration left until the next set of medication needed to be taken.​​​
+                    </p>
+                    <img src="/photos/medbo.png" alt="Smart Pillbox system">
+                </section>
+            </div>
+                <section class="backbone ">
+                    <h1 class="big_text_backbone fade-in">The Backbone</h1>
+                    <p class="small_text_backbone">
+                        Beyond the front-end design, EMMA relies on clear, structured logic. The following snippets show how I handled data collation, competitor analysis, and translation of data.
+                    </p>
+                    <div class="lets_go_btn" id="backbone_btn">
+                        <button><a href="emma.html#backbone_start"><p>Let's Go!</p></a></button>
+                    </div>
+                </section>
+                <div class="container_box_backbone" id="backbone_start">
+                    <section class="project_containers_backbone first_box">
+                        <h1>
+                            Our Objectives
+                        </h1>
+                        <p>
+                            <b>- Enhance Safety</b>​​ <br>Detect potential hazards and provide real-time alerts to prevent accidents. 
+                            <br>
+                            <br>
+                            <b>- Promote Healthy Activity​​</b>​​ <br>
+                            Encourage walking and other physical activities by making moving around less arduous ​and safer for them.​​ 
+                            <br><br>
+                            <b>- Look Out For Them</b><br>
+                            Allow​ for caretakers and others to check in on their well-being from a simple website. <br><br>
+                            <b>- Support Independent Living</b><br>
+                            Empower elderly individuals to be more mobile and independent and live without the need for ​constant supervision.
+                        </p>
+                        <img src="/photos/persona.png" alt="User Persona">    
+                    </section>
+                    <section class="project_containers_backbone second_box">
+                        <h1>Handling the input and displaying the output</h1>
+                        <p>
+                            For the PCB board to function properly, it has to understand the data of the input and translate it into an output that the elderly is able to understand. Let's take the distance tracker as an example.
+                        </p>
+                        <div class="code_box">
+                            <p>
+                            BarGraph2Display(G_Spi1, G_NumberOfBar)<br>
+                            DigitalValue = ADC.read("P9_37")<br>
+                            if DigitalValue != 0:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;AnalogVoltage = (DigitalValue * 1.8) * (2200 / 1200)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;DistanceCM = 29.988 * pow(AnalogVoltage, -1.173)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;print("Distance(cm): %f" % DistanceCM)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sio.emit('BBBW2Event', {'data': DistanceCM})<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Data sent!")<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;except:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Unable to transmit data.')<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;pass<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if DistanceCM < 40:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G_NumberOfBar = 10<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;elif DistanceCM < 50:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G_NumberOfBar = 8<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;elif DistanceCM < 60:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G_NumberOfBar = 6<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;elif DistanceCM < 70:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G_NumberOfBar = 4<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;elif DistanceCM < 80:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G_NumberOfBar = 2<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G_NumberOfBar = 0<br>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                    <div class="container_box_backbone">
+                        <section class="project_containers_backbone first_box">
+                            <h1>
+                                Competitor Analysis
+                            </h1>
+                            <p>
+                                ​For our product to be successful, we got to have an edge over our competitors in the market. We decided to make EMMA a low cost but multi-functional walking stick, so that our consumers will be able to afford a good quality aid device.
+                                <br><br>
+                                Through this short exercise, I learnt elements of product design, cost optimization, and strategic decision-making and making informed decisions so as to have an edge over our competitors. This is incredibly important as we always want our product to be the best in the market.
+                            </p>
+                            <img src="/photos/analy.png" alt="Competitor Analysis">
+
+                        </section>
+                        <section class="project_containers_backbone second_box last">
+                        <h1>Collate all data together</h1>
+                        <p>
+                            To allow caregivers to have a full view of all the sensors working together, I had to find a way to display all data from all the sensors at the same time, so caregivers are able to see if the elderly is in any type of distress.
+                        </p>
+                        <div class="code_box">
+                            <p>
+                                @sio.event<br>
+                                def connect():<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;print('Connection established.')<br>
+                                @sio.event<br>
+                                def disconnect():<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;print('Disconnected from server.')<br>
+                                <br>
+                                while True:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;try:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sio.connect('http://192.168.72.132:5000')<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;except:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Try to connect to the server.")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass<br>
+                            </p>
+                        </div>
+                        <p >
+                            By connecting all sensors to a common IP address, all sensors can be displayed together.
+                            <br><br>
+                        </p>
+                    </section>
+                    </div>
+                    <section class="intro">
+                        <h1 class="big_text_final">Final Thoughts</h1>
+                        <p class="small_text_final">
+                            Lessons Learned and Insights Gained: Challenges, Skills, and Growth from This Project
+                        </p>
+                        <div class="lets_go_btn" id="about_btn">
+                            <button><a href="emma.html#lessons"><p>Let's Go!</p></a></button>
+                        </div>
+                    </section>
+                    <section id="lessons">
+                        <h1>Lessons learnt</h1>
+                        <ul>
+                            <li>
+                                <p>- Ahh, a group project.. I have a love-hate relationship with it. Consulting with team members is something that I always love about it, but the constant thought of disappointing them is something that's always on my mind.
+                                </p>
+                            </li>
+                            <br> <br>
+                            <li>
+                                <p>- EMMA was a creative idea that came about from one of my group mates. All of us agreed that it was a great idea, something not commonly found in our society, but the benefits of it is huge.
+                                </p>
+                            </li>
+                            <br><br>
+                            <li>
+                                <p>- The planning was tough, from the gantt chart, because I had to break down all the milestones clearly and estimate realistic time for each task. It taught me the importance of time management and forward planning in a project. ​
+                                </p>
+                            </li>
+                            <br><br>
+                            <li>
+                                <p>
+                                    - Testing and debugging took longer than expected, but it showed me the value of iterative improvement and checking work step by step rather than rushing.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    This project was long and tough, but I am glad to be able to complete it with my teammates.
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+                    <section id="skills">
+                        <h1>Skills demonstrated</h1>
+                        <ul class="top">
+                            <h2>Technical Skills</h2>
+                            <li><p>- <b>Hardware Integration: </b>: connected sensors, LEDs, and buzzers to a microcontroller </p></li>
+                            <br><br>
+                            <li><p>- <b>Programming</b>: Processed sensor data and controlled outputs via code.</p></li>
+                            <li><p>- <b>Design Thinking</b>: Planned where to place all the sensors for optimal efficency and usefulness.</p></li>
+                        </ul>
+                        <ul>
+                            <h2>Soft skills</h2>
+                                <li>
+                                    <p>- <b>Teamwork</b>: Collaborated effectively with team members to divide responsibilities, coordinate tasks, and integrate hardware and software components.                                     
+                                    </p>
+                                </li>
+                                <br><br>
+                                <li><p>- <b>Problem Solving in collaboration</b>: Worked with teammates to troubleshoot sensor and programming issues, ensuring the prototype functioned as intended.</p></li>
+                                <br><br>                                
+                                <li><p>- <b>Project Management</b>:  Persisted through challenges in coding, sensor calibration, and system testing until the project met design goals.</p></li>
+                                <br><br>
+                        </ul>                        
+                    </section>
+            <footer>
+                <div id="footer_logos">
+                    <ul id="logos">
+                        <li id="email"><a href="mailto:hoginkiat@gmail.com"><img src="photos/44-443542_white-email-logo-transparent-background-removebg-preview.png"></a></li>
+                        <li id="phone"><a href=""><img src="photos/OIP__3_-removebg-preview.png"></a></li>
+                        <li id="linkedin"><a href="https://www.linkedin.com/in/ginkiatho/" target="_blank"><img src="photos/OIP-removebg-preview.png" alt=""></a></li>
+
+                    </ul>
+                </div>
+            </footer>
+        </main>
+        <script>
+        const texts = document.querySelectorAll(".small_text, .big_text");
+
+        window.addEventListener("scroll", () => {
+            const scrollY = window.scrollY;
+
+            texts.forEach(text => {
+                const maxSize = text.classList.contains("big_text") ? 90 : 20;
+                const minSize = text.classList.contains("big_text") ? 32 : 12; //for big text, it goes from 64 to 32, else it goes from 24 to 16
+
+                const size = Math.max(
+                    minSize,
+                    maxSize - scrollY * 0.10
+                );
+
+                text.style.fontSize = `${size}px`;
+            });
+        });
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll(".fade").forEach(el => {
+                observer.observe(el);
+            });
+        </script>
+    </body>
+</html>

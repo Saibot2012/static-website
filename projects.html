@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="css.css">
+
+</head>
+<body class="fade-in">
+    <main>
+        <nav>
+            <ul>
+                <li id="logo"><a href="index.html"><img src="/photos/logo16k.jpg" alt="logo image"></a></li>
+                <li class="marg"><a href="index.html">Home</a></li>
+                <li class="marg"><a href="about_me.html">About Me</a></li>
+                <li class="marg"><a href="Projects.html">Projects</a></li>
+                <li class="marg"><a href="photo.html">Photography</a></li>
+            </ul>
+        </nav>
+        <section class="intro">
+            <h1 class="big_text">Projects</h1>
+            <p class="small_text">
+                Over the course of my studies, I have completed many projects. </p>
+            <p class="small_text" id="m">Scroll down to take a look!</p>
+            <div class="lets_go_btn" id="about_btn">
+                <button><a href="projects.html#projects"><p>Let's Go!</p></a></button>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="box_project">
+                <img src="/photos/doncha.png" alt="Doncha">
+                <h1>Doncha</h1>
+                <p>A front-end web design for a bubble tea shop.</p>
+                <div class="bottom">
+                    <a href="doncha.html"><p>Click on me for an in-depth look into the website!</p></a>
+                </div>
+            </div>
+            <div class="box_project">
+                <div id="calc">
+                    <img src="/photos/calc.png" alt="calculator">
+                </div>
+                <h1>Scientific Calculator</h1>
+                <p>A scientific calculator capable of handling complex operations.</p>
+                <div class="bottom">
+                    <a href="calculator.html"><p>Click on me for an in-depth look into the calculator!</p></a>
+                </div> 
+            </div>
+            <div class="box_project doodle">
+                <div>
+                    <img src="/photos/dood.png" alt="Doodle">
+                </div>
+                <h1>Doodle</h1>
+                <p>A fully functional drawing app with intuitive features.</p>
+                <div class="bottom">
+                    <a href="doodle.html"><p>Click on me for an in-depth look into the drawing app!</p></a>
+                </div> 
+            </div>
+            <div class="box_project emma">
+                <div>
+                    <img src="/photos/emma.png" alt="EMMA">
+                    <img src="/photos/emma2.png" alt="EMMA2">
+                </div>
+                <h1>EMMA</h1>
+                <p>A smart walking stick designed for enhanced mobility along with a smart pillbox.</p>
+                <div class="bottom">
+                    <a href="emma.html"><p>Click on me for an in-depth look into the smart walking stick!</p></a>
+                </div> 
+            </div>
+        </section>
+        <footer>
+            <div id="footer_logos">
+                <ul id="logos">
+                    <li id="email"><a href="mailto:hoginkiat@gmail.com"><img src="photos/44-443542_white-email-logo-transparent-background-removebg-preview.png"></a></li>
+                    <li id="phone"><a href=""><img src="photos/OIP__3_-removebg-preview.png"></a></li>
+                    <li id="linkedin"><a href="https://www.linkedin.com/in/ginkiatho/" target="_blank"><img src="photos/OIP-removebg-preview.png" alt=""></a></li>
+
+                </ul>
+            </div>
+        </footer>
+    </main>
+    <script>
+const texts = document.querySelectorAll(".small_text, .big_text");
+
+window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+
+    texts.forEach(text => {
+        const maxSize = text.classList.contains("big_text") ? 90 : 20;
+        const minSize = text.classList.contains("big_text") ? 32 : 12; //for big text, it goes from 64 to 32, else it goes from 24 to 16
+
+        const size = Math.max(
+            minSize,
+            maxSize - scrollY * 0.10
+        );
+
+        text.style.fontSize = `${size}px`;
+    });
+});
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".fade").forEach(el => {
+        observer.observe(el);
+    });
+
+
+</script>
+</body>
+</html>

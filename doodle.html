@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doodle</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<html>
+    <body class="fade-in">
+        <main>
+            <nav>
+                <ul>
+                    <li id="logo"><a href="index.html"><img src="/photos/logo16k.jpg" alt="logo image"></a></li>
+                    <li class="marg"><a href="index.html">Home</a></li>
+                    <li class="marg"><a href="about_me.html">About Me</a></li>
+                    <li class="marg"><a href="Projects.html">Projects</a></li>
+                    <li class="marg"><a href="photo.html">Photography</a></li>
+                </ul>
+            </nav>
+            <section class="intro">
+                <h1 class="big_text fade-in">Doodle</h1>
+                <p class="small_text fade-in dood">
+                    A digital drawing application that allows users to create, edit, and save artwork. The project focused on interactive interface design, tool functionality, and user experience.
+                </p>
+                <br>
+                <p class="small_text fade-in" id="m">Project type: Individual</p>
+                <div class="lets_go_btn fade-in" id="about_btn">
+                    <button><a href="doodle.html#tools"><p>Let's Go!</p></a></button>
+                </div>
+            </section>
+            <div id="tools"></div>
+            <div class="tools_intro">
+                <h1>Tools used</h1>
+            </div>
+            <section class="tools_used">
+                <div class="Csharp1">
+                    <img src="/photos/c-computer-programming-software-development-programmer-marklogic-coder-removebg-preview.png" alt="C#"><h2>C#</h2>
+                </div>
+                <div class="VS1">
+                    <img src="/photos/visual-studio-logo-freelogovectors.net_-400x398-removebg-preview.png" alt="CSS"><h2>Visual Studio</h2>
+                </div>
+
+            </section>
+            <div class="container_box">
+                <section class="project_containers first_box">
+                    <h1>
+                        Drawing App
+                    </h1>
+                    <p>
+                        Normal mode contains the 4 main operations: plus, minus, multiply, divide, while scientific mode contains more functions such as logarithms, square root, trigonometric functions etc. 
+                    </p>
+                    <img src="/photos/usual.png" alt="">
+
+                </section>
+                <section class="project_containers second_box">
+                    <h1>
+                        Shapes 
+                    </h1>
+                    <p>
+                        Users can insert shapes that are available For example: Through the use of the shapes tab and the size selector, they can insert any of the shapes provided. I aim to add more shapes in the future so users are able to be more creative in their drawings/designs..
+                    </p>
+                    <img src="/photos/shapes.png" alt="Shapes">
+                </section>
+            </div>
+           <div class="container_box">
+                <section class="project_containers first_box">
+                    <h1>Description</h1>
+                    <p>
+                        For first-time users, the description provides a clear overview of the button’s function and its expected behavior.
+                    </p>
+                    <div class="draw-pics">
+                        <img src="/photos/loading.png" alt="character_limit"><span>Load button</span>
+                        <img src="/photos/enable.png" alt="character_limit"><span>Enable button</span>
+                        <img src="/photos/paste.png" alt="character_limit"><span>Paste button</span>
+                        <img src="/photos/undo.png" alt="character_limit"><span>Undo button</span>
+                    </div>
+                </section>
+                <section class="project_containers second_box">
+                    <h1>Fonts and Text</h1>
+                    <p>
+                        Users can add text to the drawing board by typing it into the provided text box and then selecting their preferred font and size. 
+                        <br><br>
+                        Users must first select the text option before being able to paste the text onto the drawing board.
+                    </p>
+                    <video type="video/mp4" controls id="fonts" >
+                        <source src="/photos/fonts.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </section>
+            </div>
+                <section class="backbone ">
+                    <h1 class="big_text_backbone fade-in">The Backbone</h1>
+                    <p class="small_text_backbone">
+                        Beyond the interface, this drawing app relies on clear, structured logic. The following snippets show how I handled input processing, pasting of shapes/text and complex operations.
+                    </p>
+                    <div class="lets_go_btn" id="backbone_btn">
+                        <button><a href="doodle.html#backbone_start"><p>Let's Go!</p></a></button>
+                    </div>
+                </section>
+                <div class="container_box_backbone" id="backbone_start">
+                    <section class="project_containers_backbone first_box">
+                        <h1>
+                            Loading images from <br>library
+                        </h1>
+                        <p>
+                            This feature allows users to draw directly on imported images. To enable this, the PNG image is converted into a bitmap, which supports drawing. I had the most trouble with this because without converting to a bitmap, users cannot draw anything onto the image. Through this, I learnt to stay calm and solve problems, step by step. 
+                        </p>
+                        <div class="code_box">
+                            <p>
+                                private void picBoxLoad_Click(object sender, EventArgs e)<br>
+                                {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;picBoxToolPic.Image = picBoxLoad.Image;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;lblTexts.Text = "Loads image files from the library.";<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;using (OpenFileDialog ofd = new OpenFileDialog())<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ofd.Title = "Load Dialog";<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ofd.Filter = "JPEG files(*.jpeg)|*.jpeg| Image Files (*.BMP)|*.BMP| All files (*.*)|*.*";<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (ofd.ShowDialog() == DialogResult.OK)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bitmap loadImage = new Bitmap(ofd.FileName);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g = Graphics.FromImage(bm);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g.DrawImage(loadImage, 0, 0, bm.Width, bm.Height);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picBoxMain.Image = bm;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch (Exception ex)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show("Error loading image: " + ex.Message);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}
+
+
+                            </p>
+                        </div>
+                    </section>
+                    <section class="project_containers_backbone second_box">
+                        <h1>Undo and Redo</h1>
+                        <p>
+                            The undo and redo buttons are essential features in a drawing app because mistakes are common when drawing. They allow users to easily correct errors, helping them maintain accuracy and precision in their drawings. From this addition, I improved my skills on user experience and creativity, allowing users to have a better time using this drawing app.
+                        </p>
+                        <div class="code_box">
+                            <p>
+                            private void picBoxUndo_Click(object sender, EventArgs e)<br>
+                            {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;lblTexts.Text = "Undo last drawing";<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if (undoStack.Count > 0)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;redoStack.Push((Bitmap)bm.Clone());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// saves the current state for redo<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bm = (Bitmap)undoStack.Pop();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// restores previous state<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g = Graphics.FromImage(bm);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picBoxMain.Image = bm;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// updates picBoxMain<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            }<br>
+                            <br>
+                            private void picBoxRedo_Click(object sender, EventArgs e)<br>
+                            {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;lblTexts.Text = "Reapplies last drawing";<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;if (redoStack.Count > 0)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;undoStack.Push((Bitmap)bm.Clone());<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bm = (Bitmap)redoStack.Pop();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g = Graphics.FromImage(bm);<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picBoxMain.Image = bm;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                            }
+
+
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                    <div class="container_box_backbone">
+                        <section class="project_containers_backbone first_box">
+                            <h1>
+                                Pasting of shapes/emojis
+                            </h1>
+                            <p>
+                                The code below allows users to paste any shapes or emojis that they have selected onto the drawing board.
+                            </p>
+                            <div class="code_box">
+                                <p>
+                                    if (flagEmoji)<br>
+                                    {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;g = Graphics.FromImage(bm);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Font emojiFont = new Font("Segoe UI Emoji", scrollSize.Value * 5);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;SolidBrush emojiBrush = new SolidBrush(pen.Color);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;g.DrawString(emoji, emojiFont, emojiBrush, startP.X, startP.Y);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;g.Dispose();<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;picBoxMain.Invalidate();<br>
+                                    }<br>
+                                    flagEmoji = false; // Reset so it doesn't draw again<br>
+                                    <br>
+                                    if (flagShapes)<br>
+                                    {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;g = Graphics.FromImage(bm);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Font shapeSize = new Font("Segoe UI Shapes", scrollSize.Value);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;SolidBrush emojiBrush = new SolidBrush(pen.Color);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;g.DrawString(shapes, shapeSize, emojiBrush, startP.X, startP.Y);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;g.Dispose();<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;picBoxMain.Invalidate();<br>
+                                    }<br>
+                                    flagShapes = false;<br>
+                                    }
+
+
+                                </p>
+                            </div>
+                        </section>
+                        <section class="project_containers_backbone second_box last">
+                        <h1>Save button</h1>
+                        <p>
+                            All efforts are wasted if users cannot save their work. To tackle this, I included a save button, allowing users to save their work as a bitmap and revisit or edit it later. A dialog box will appear after the file has been successfully saved. Implementing this reinforced my knowledge on file handling, event-driven programming, and user interface design.
+                        </p>
+                        <div class="code_box">
+                            <p>
+                                private void picBoxSave_Click(object sender, EventArgs e)<br>
+                                {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;picBoxToolPic.Image = picBoxSave.Image;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;lblTexts.Text = "Saves the current drawing on the board.";<br>
+                                <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;paint = false;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;using (SaveFileDialog sfdlg = new SaveFileDialog())<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sfdlg.Title = "Save Dialog";<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sfdlg.Filter = "Image Files (*.BMP)|*.BMP| JPEG files(*.jpeg)|*.jpeg| GIF files(*.GIF)|*.GIF| All files (*.*)|*.*";<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (sfdlg.ShowDialog(this) == DialogResult.OK)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;using (Bitmap bmp = new Bitmap(picBoxMain.Width, picBoxMain.Height))<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picBoxMain.DrawToBitmap(bmp, rect);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bmp.Save(sfdlg.FileName, System.Drawing.Imaging.ImageFormat.Bmp);<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show("File saved successfully");<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                }
+
+
+                            </p>
+                        </div>
+                        <img src="/photos/eqn.png" alt="Equation">
+                    </section>
+                    </div>
+                    <section class="intro">
+                        <h1 class="big_text_final">Final Thoughts</h1>
+                        <p class="small_text_final">
+                            Lessons Learned and Insights Gained: Challenges, Skills, and Growth from This Project
+                        </p>
+                        <div class="lets_go_btn" id="about_btn">
+                            <button><a href="doodle.html#lessons"><p>Let's Go!</p></a></button>
+                        </div>
+                    </section>
+                    <section id="lessons">
+                        <h1>Lessons learnt</h1>
+                        <ul>
+                            <li>
+                                <p>- This was the second windows app that I have coded, so I already had some idea of how the code works. Though it made life a little easier, there were still hardships ahead.​
+                                </p>
+                            </li>
+                            <br> <br>
+                            <li>
+                                <p>- The requirement to draw on an imported image was the first challenge that I faced. As the imported image was in the PNG format, a conversion to bitmap format was needed before any drawings could occur. This led to some head scratching and countless hours of research.
+                                </p>
+                            </li>
+                            <br><br>
+                            <li>
+                                <p>- Naturally, the app had to be visually appealing too. I took inspiration from the drawing app on windows and added elements which I thought would be useful. It was fun,but tough trying to think of creative designs. As a person who is not creative, thinking out of the box was a new but fulfilling experience. ​
+                                </p>
+                            </li>
+                            <br><br>
+                            <li>
+                                <p>
+                                    - Overall, I am very happy to be able to complete this project and produce a drawing app that I am proud of.
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+                    <section id="skills">
+                        <h1>Skills demonstrated</h1>
+                        <ul class="top">
+                            <h2>Technical Skills</h2>
+                            <li><p>- <b>Software Testing & Optimization: </b>: Ensured smooth performance for real-time drawing without lag. </p></li>
+                            <br><br>
+                            <li><p>- <b>File Management & Data Handling</b>: Created save/load features to manage user-created drawings.</p></li>
+                        </ul>
+                        <ul>
+                            <h2>Soft skills</h2>
+                                <li>
+                                    <p>- <b>Time Management</b>: Planned and completed all tasks, from research to presentation, within deadlines.                                      
+                                    </p>
+                                </li>
+                                <br><br>
+                                <li><p>- <b>Problem-Solving for User Experience:</b>: Addressed interface issues and optimized workflow for seamless interaction.</p></li>
+                                <br><br>                                
+                                <li><p>- <b>Critical Thinking</b>: Assessed design choices to ensure both functionality and aesthetic coherence; not too complicated but still advanced.</p></li>
+                                <br><br>
+                                <li><p>- <b>Attention to User-Centric Design</b>: Focused on making the app easy and enjoyable to use.</p></li>
+                        </ul>                        
+                    </section>
+            <footer>
+                <div id="footer_logos">
+                    <ul id="logos">
+                        <li id="email"><a href="mailto:hoginkiat@gmail.com"><img src="photos/44-443542_white-email-logo-transparent-background-removebg-preview.png"></a></li>
+                        <li id="phone"><a href=""><img src="photos/OIP__3_-removebg-preview.png"></a></li>
+                        <li id="linkedin"><a href="https://www.linkedin.com/in/ginkiatho/" target="_blank"><img src="photos/OIP-removebg-preview.png" alt=""></a></li>
+
+                    </ul>
+                </div>
+            </footer>
+        </main>
+        <script>
+        const texts = document.querySelectorAll(".small_text, .big_text");
+
+        window.addEventListener("scroll", () => {
+            const scrollY = window.scrollY;
+
+            texts.forEach(text => {
+                const maxSize = text.classList.contains("big_text") ? 90 : 20;
+                const minSize = text.classList.contains("big_text") ? 32 : 12; //for big text, it goes from 64 to 32, else it goes from 24 to 16
+
+                const size = Math.max(
+                    minSize,
+                    maxSize - scrollY * 0.10
+                );
+
+                text.style.fontSize = `${size}px`;
+            });
+        });
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll(".fade").forEach(el => {
+                observer.observe(el);
+            });
+        </script>
+    </body>
+</html>

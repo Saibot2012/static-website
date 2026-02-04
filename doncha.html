@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doncha</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<html>
+    <body class="fade-in">
+        <main>
+            <nav>
+                <ul>
+                    <li id="logo"><a href="index.html"><img src="/photos/logo16k.jpg" alt="logo image"></a></li>
+                    <li class="marg"><a href="index.html">Home</a></li>
+                    <li class="marg"><a href="about_me.html">About Me</a></li>
+                    <li class="marg"><a href="Projects.html">Projects</a></li>
+                    <li class="marg"><a href="photo.html">Photography</a></li>
+                </ul>
+            </nav>
+            <section class="intro">
+                <h1 class="big_text">Doncha</h1>
+                <p class="small_text">
+                    A conceptual website design for a cozy bubble tea shop, showcasing brand identity, layout, and customer-focused aesthetics.
+                </p>
+                <br><br>
+                <p class="small_text" id="m">Project type: Individual</p>
+                <div class="lets_go_btn" id="about_btn">
+                    <button><a href="doncha.html#tools"><p>Let's Go!</p></a></button>
+                </div>
+            </section>
+            <div id="tools"></div>
+            <div class="tools_intro">
+                <h1>Tools used</h1>
+            </div>
+            <section class="tools_used">
+                <div class="HTML1"><img src="/photos/HTML-removebg-preview.png" alt="HTML"><h2>HTML</h2></div>
+                <div class="CSS1"><img src="/photos/CSS-removebg-preview.png" alt="CSS"><h2>CSS</h2></div>
+                <div class="VS1"><img src="/photos/eb1aafceb4a159bde95515d57b7dd352-removebg-preview.png" alt="VS"><h2>Visual Studio Code</h2></div>
+            </section>
+            <div class="container_box">
+                <section class="project_containers first_box">
+                    <h1>
+                        Homepage 
+                    </h1>
+                    <p>
+                        This page is the first page customers will see  when they enter the website. Customers can check out bestsellers, Doncha's values and social media challenges for giveaways. 
+                    </p>
+                    <img src="/photos/homepage.png" alt="Homepage">
+                </section>
+                <section class="project_containers second_box">
+                    <h1>
+                        Our Menu 
+                    </h1>
+                    <p>
+                        The page where all items offered are shown. The menu page is split into multiple sections, consisting of 'Ice Blend, Milk Tea, Brewed Tea, Brown Sugar Tea, Yoghurt Series and Smoothie series'. This clear differentiation highlights the wide variety of choices available, encouraging customers to explore different options and return in the future to try items that they have not tried.
+                    </p>
+
+                    <img src="/photos/menu1.png" alt="menu">
+                </section>
+            </div>
+           <div class="container_box">
+                <section class="project_containers first_box">
+                    <h1>Sign up/login page for members</h1>
+                    <p>
+                        For returning members to login to their account, and for new members to sign up. Registered members can log in to access personalised features such as order history, exclusive promotions, and account management. This enhances customer engagement while ensuring secure handling of user data.
+                    </p>
+                    <img src="/photos/member.png" alt="Member">
+                </section>
+                <section class="project_containers second_box">
+                    <h1>Contact Us page</h1>
+                    <p>
+                        This page provides users with a convenient way to reach the company for enquiries, feedback, or support. Customers can submit their questions through a contact form, ensuring clear communication between Doncha and its customers.
+                    </p>
+                    <img src="/photos/contact.png" alt="Contact Us Page">
+                </section>
+            </div>
+                <section class="backbone">
+                    <h1 class="big_text_backbone">The Backbone</h1>
+                    <p class="small_text_backbone">
+                        Beyond the visuals, the website relies on clean, efficient code. The following snippets show how I tackled challenges like [responsive design / dynamic content / form validation]
+                    </p>
+                    <div class="lets_go_btn" id="backbone_btn">
+                        <button><a href="doncha.html#backbone_start"><p>Let's Go!</p></a></button>
+                    </div>
+                </section>
+                <div class="container_box_backbone" id="backbone_start">
+                    <section class="project_containers_backbone first_box">
+                        <h1>
+                            Scrolling menu
+                        </h1>
+                        <p>
+                            I implemented a scrolling menu using JavaScript to enhance user navigation. This went beyond the syllabus, but it was a fun challenge to code and experiment with. This small section taught me how to combine CSS layout techniques with JavaScript functionality, ensuring both usability and visual appeal across different browsers.
+                        </p>
+                        <div class="code_box">
+                            <p>
+                                .flex{ <br>
+                                margin: 0 auto; <br>
+                                display: flex; <br>
+                                gap: 20px; <br>
+                                width: 90%; <br>
+                                overflow-x: auto; <br>
+                                padding: 10px 0 <br>
+                                scroll-snap-type: x mandatory; <br>
+                                    } <br>
+                                .flex::-webkit-scrollbar  <br>
+                                  { <br>
+                                display: none; <br>
+                                  }<br>
+                            </p>
+                        </div>
+                    </section>
+                    <section class="project_containers_backbone second_box">
+                        <h1>Form Validation</h1>
+                        <p>
+                            I implemented form validation using HTML5 to ensure that all user inputs met specific conditions (e.g., required fields, correct format, and valid ranges). Through this task, I strengthened my skills in front-end logic, conditional programming, and client-side error handling, which are essential for creating reliable web applications in the future.
+                        </p>
+                        <div class="code_box">
+                            <p>
+                            &lt;div class="q"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Password: &lt;/label&gt; &nbsp;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;input name="password" type="password" required pattern=".{16,}" placeholder="Minimum 16 characters"&gt;<br>
+                            &lt;/div&gt;<br><br>
+
+                            &lt;div class="q"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Reconfirm Password: &lt;/label&gt; &nbsp;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;input name="password" type="password" required pattern=".{16,}" placeholder="Minimum 16 characters"&gt;<br>
+                            &lt;/div&gt;<br><br>
+
+                            &lt;div class="q"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;Home Address: &lt;/label&gt; &nbsp;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;input name="address" type="address" required placeholder="Link your home address for deliveries."&gt;<br>
+                            &lt;/div&gt;
+                            </p>
+                            <video type="video/mp4" controls id="doncha" >
+                                <source src="/photos/doncha.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+
+                            </video>
+                        </div>
+                    </section>
+                </div>
+
+                    <div class="container_box_backbone">
+                        <section class="project_containers_backbone first_box">
+                            <h1>
+                                Grid Design
+                            </h1>
+                            <p>
+                                To create an eye-catching design for the social media challenge, I had to carefully think about how the grid would be presented, ensuring that the layout was visually balanced and engaging. In the end, I felt this grid layout was simple but aesthetically pleasing. Through this, I learned and strengthened my skills in front-end layout design and aesthetic decision-making.
+                            </p>
+                            <div class="code_box">
+                                <p>
+                                    #grid{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;display:grid;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;grid-template-columns: repeat(6, 1fr);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;grid-template-rows: repeat(2, 1fr);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;margin:20px;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;grid-gap:20px;<br>
+                                    }<br>
+                                </p>
+                            </div>
+                        </section>
+                        <section class="project_containers_backbone second_box">
+                        <h1>Media Query</h1>
+                        <p>
+                            To make the website visually appealing on mobile, media queries were used. Since the website was developed on localhost, the “Inspect” element was used to simulate the mobile view. Localhost enables us to simulate entering the website on different devices accurately. Media query is one of the most important aspects for website design, and through this, I gained knowledge on how to adapt to the screen sizes of different devices while making the website still look intact and attractive.
+                        </p>
+                        <div class="code_box">
+                            <p>
+                                @media screen and (max-width:1030px){<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;.container{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;#title{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;nav ul{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin:0 10px;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;#rev{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;#drinks{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;align-items: center;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;.e{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-top:70px;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;#first, #second, #third{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:80%;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height:auto;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;.w p{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 500px;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;.circle{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-top:20px;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;#first_flex, #second_flex, #third_flex{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;#first_flex img, #second_flex img{<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;margin-left:40px;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                }
+
+                            </p>
+                        </div>
+                        <div id="device_pics">
+                                <div><img src="/photos/Iphone.png" alt="Iphone"><p>Iphone</p></div>
+                                <div><img src="/photos/Ipad.png" alt="Ipad" id="e"><p>Ipad</p></div>
+                        </div>
+                    </section>
+                    </div>
+                    <div class="container_box_backbone">
+                        <section class="project_containers_backbone first_box last">
+                            <h1>
+                                Design inspiration
+                            </h1>
+                            <p>
+                                The brown and beige design of the website wasn't the design I originally had. At first, I took inspiration from the Black Tap Burgers website, which incorporated a black and white layout. 
+                            </p>
+                            <img src="/photos/image (7).png" alt="Doncha original">
+                            <p>
+                                However, the initial design felt plain and overly “PowerPoint-like.” After consulting friends and teachers, I decided to shift towards a warmer and more welcoming layout. <br><br>
+
+                                I realised that I have always been drawn to the atmosphere of cafés with warm colour tones. I often imagine walking into a café during winter, which gives me a strong sense of comfort and warmth. <br><br>    
+
+                                This inspired the second design, which uses brown and beige tones. I felt this colour palette was suitable, as bubble tea comes in a variety of colours, and the warm, café-like vibe complements the store's overall aesthetic.
+                            </p>
+                        </section>
+                    </div>
+                    <section class="intro">
+                        <h1 class="big_text_final">Final Thoughts</h1>
+                        <p class="small_text_final">
+                            Lessons Learned and Insights Gained: Challenges, Skills, and Growth from This Project
+                        </p>
+                        <div class="lets_go_btn" id="about_btn">
+                            <button><a href="doncha.html#lessons"><p>Let's Go!</p></a></button>
+                        </div>
+                    </section>
+                    <section id="lessons">
+                        <h1>Lessons learnt</h1>
+                        <ul>
+                            <li>
+                                <p>- Working on this project individually meant I had to troubleshoot all code issues myself. 
+                                    It helped me develop patience and the habit of breaking problems into smaller, manageable parts.
+                                </p>
+                            </li>
+                            <br> <br>
+                            <li>
+                                <p>- Because the website had many pages, I learned to manage my time by completing the pages with the most content first, 
+                                and the simpler ones later, ensuring I finished the project on schedule.
+                                </p>
+                            </li>
+                            <br><br>
+                            <li>
+                                <p>- The project encouraged me to be creative. A website isn’t just code, it’s about capturing users’ attention 
+                                and guiding them to explore the store. Learning to balance creativity with technical challenges 
+                                helped me think critically about both design and functionality.
+                                </p>
+                            </li>
+                            <br><br>
+                            <li>
+                                <p>
+                                    - Overall, I am very happy to be able to complete this project and produce a website that I am proud of.
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+                    <section id="skills">
+                        <h1>Skills demonstrated</h1>
+                        <ul class="top">
+                            <h2>Technical Skills</h2>
+                            <li><p>- <b>Design Thinking</b>: Applied structured design processes to create a visually appealing and cohesive shop concept.</p></li>
+                            <br><br>
+                            <li><p>- <b>Coding Knowledge</b>: Used VS Code, HTML, and CSS to build a functional digital mock-up of the shop website.</p></li>
+                        </ul>
+                        <ul>
+                            <h2>Soft skills</h2>
+                                <li>
+                                    <p>- <b>Time Management</b>: Planned and completed all tasks, from research to presentation, within deadlines.                                       
+                                    </p>
+                                </li>
+                                <br><br>
+                                <li><p>- <b>Independent Research</b>: Analyzed popular bubble tea websites, customer preferences, and design trends to make informed design decisions.</p></li>
+                                <br><br>                                
+                                <li><p>- <b>Critical Thinking</b>: Assessed design choices to ensure both functionality and aesthetic coherence; not too complicated but still advanced.</p></li>
+                                <br><br>
+                                <li><p>- <b>Project Management</b>: Oversaw all aspects of the project individually, from concept development to final presentation.</p></li>
+                        </ul>                        
+                    </section>
+            <footer>
+                <div id="footer_logos">
+                    <ul id="logos">
+                        <li id="email"><a href="mailto:hoginkiat@gmail.com"><img src="photos/44-443542_white-email-logo-transparent-background-removebg-preview.png"></a></li>
+                        <li id="phone"><a href=""><img src="photos/OIP__3_-removebg-preview.png"></a></li>
+                        <li id="linkedin"><a href="https://www.linkedin.com/in/ginkiatho/" target="_blank"><img src="photos/OIP-removebg-preview.png" alt=""></a></li>
+
+                    </ul>
+                </div>
+            </footer>
+        </main>
+        <script>
+        const texts = document.querySelectorAll(".small_text, .big_text");
+
+        window.addEventListener("scroll", () => {
+            const scrollY = window.scrollY;
+
+            texts.forEach(text => {
+                const maxSize = text.classList.contains("big_text") ? 90 : 20;
+                const minSize = text.classList.contains("big_text") ? 32 : 12; //for big text, it goes from 64 to 32, else it goes from 24 to 16
+
+                const size = Math.max(
+                    minSize,
+                    maxSize - scrollY * 0.10
+                );
+
+                text.style.fontSize = `${size}px`;
+            });
+        });
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll(".fade").forEach(el => {
+                observer.observe(el);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<html>
+    <body class="fade-in">
+        <main>
+            <nav>
+                <ul>
+                    <li id="logo"><a href="index.html"><img src="/photos/logo16k.jpg" alt="logo image"></a></li>
+                    <li class="marg"><a href="index.html">Home</a></li>
+                    <li class="marg"><a href="about_me.html">About Me</a></li>
+                    <li class="marg"><a href="Projects.html">Projects</a></li>
+                    <li class="marg"><a href="photo.html">Photography</a></li>
+                </ul>
+            </nav>
+            <section class="intro">
+                <h1 class="big_text fade-in">Calculator</h1>
+                <p class="small_text fade-in">
+                    Developed a functional calculator application using Visual Studio, featuring a clean interface and reliable arithmetic operations.
+                </p>
+                <br>
+                <p class="small_text fade-in" id="m">Project type: Individual</p>
+                <div class="lets_go_btn fade-in" id="about_btn">
+                    <button><a href="calculator.html#tools"><p>Let's Go!</p></a></button>
+                </div>
+            </section>
+            <div id="tools"></div>
+            <div class="tools_intro">
+                <h1>Tools used</h1>
+            </div>
+            <section class="tools_used">
+                <div class="Csharp1">
+                    <img src="/photos/c-computer-programming-software-development-programmer-marklogic-coder-removebg-preview.png" alt="C#"><h2>C#</h2>
+                </div>
+                <div class="VS1">
+                    <img src="/photos/visual-studio-logo-freelogovectors.net_-400x398-removebg-preview.png" alt="CSS"><h2>Visual Studio</h2>
+                </div>
+
+            </section>
+            <div class="container_box">
+                <section class="project_containers first_box">
+                    <h1>
+                        Normal/Scientific Mode 
+                    </h1>
+                    <p>
+                        Normal mode contains the 4 main operations: plus, minus, multiply, divide, while scientific mode contains more functions such as logarithms, square root, trigonometric functions etc.  
+                    </p>
+                    <div id="calculator_pics">
+                        <div><img src="/photos/normal.png" alt="normal"> <span>Normal</span></div>
+                        <div><img src="/photos/scientific.png" alt="scientific"><span>Scientific</span></div>
+                    </div>
+
+                </section>
+                <section class="project_containers second_box">
+                    <h1>
+                        Off/On button 
+                    </h1>
+                    <p>
+                        To off the calculator, the shift button is pressed, followed by the AC. This will render all buttons inactive and nothing will happen if the user presses them.
+                        <br><br>
+                        To turn on the calculator, the user would simply just press the 'ON' button.
+                    </p>
+                    <video type="video/mp4" controls id="offon" >
+                        <source src="/photos/offon.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </section>
+            </div>
+           <div class="container_box">
+                <section class="project_containers first_box">
+                    <h1>Character limit</h1>
+                    <p>
+                        Once the number fills all the available space in the window, a popup will alert the user that the character limit has been reached.
+                        <br><br>
+                        This prevents accidental key presses that the user may not notice from being included in the calculations.
+                    </p>
+                    <div id="char"><img src="/photos/charli.png" alt="character_limit"></div>
+                </section>
+                <section class="project_containers second_box">
+                    <h1>Sound effects</h1>
+                    <p>
+                        ​To simulate as close to a real calculator, I have added sounds when the user presses any buttons, and a voice-over when the 'AC' button is pressed.
+                        <br><br>
+​                          There is an option to disable the voiceover should it get disruptive in the long run.
+                        <br><br>
+                        (Click on the sound option below!)
+                    </p>
+                    <video type="video/mp4" controls id="offon" >
+                        <source src="/photos/spek.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </section>
+            </div>
+                <section class="backbone ">
+                    <h1 class="big_text_backbone fade-in">The Backbone</h1>
+                    <p class="small_text_backbone">
+                        Beyond the interface, this calculator relies on clear, structured logic. The following snippets show how I handled input processing, arithmetic operations, and display updates.
+                    </p>
+                    <div class="lets_go_btn" id="backbone_btn">
+                        <button><a href="calculator.html#backbone_start"><p>Let's Go!</p></a></button>
+                    </div>
+                </section>
+                <div class="container_box_backbone" id="backbone_start">
+                    <section class="project_containers_backbone first_box">
+                        <h1>
+                            Character limit
+                        </h1>
+                        <p>
+                            This is essential for a calculator because, without an input limit, users could enter infinitely long numbers. I initially overlooked this issue, but correcting it ensures the calculator produces valid results. Through this, I've learnt to anticipate user actions, implement quality assurance measures and design more reliable applications.
+                        </p>
+                        <div class="code_box">
+                            <p>
+                                if (txtResults.Text.Length == 15)<br>
+                                {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;MessageBox.Show("Character limit reached!");<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;return;<br>
+                                }
+
+                            </p>
+                        </div>
+                    </section>
+                    <section class="project_containers_backbone second_box">
+                        <h1>Keyboard detection</h1>
+                        <p>
+                            The calculator can detect inputs from the keyboard, allowing users to type numbers and operations directly instead of clicking each button manually. This not only improves efficiency but also enhances the user experience by providing flexibility in how the calculator can be used. Through this feature, I strengthened my skills in event handling, user interface design, and enhancing usability, allowing user experience to be simpler and efficient.
+                        </p>
+                        <div class="code_box">
+                            <p>
+                            private void Form1_Keys(object sender, KeyEventArgs e)<br>
+                            {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;switch (e.KeyCode)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case Keys.D0:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btn0.PerformClick();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case Keys.D1:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btn1.PerformClick();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case Keys.D2:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btn2.PerformClick();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case Keys.D3:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btn3.PerformClick();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case Keys.D4:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btn4.PerformClick();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case Keys.D5 when !e.Shift:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btn5.PerformClick();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case Keys.D6:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;btn6.PerformClick();<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                    <div class="container_box_backbone">
+                        <section class="project_containers_backbone first_box">
+                            <h1>
+                                Button toggle
+                            </h1>
+                            <p>
+                                To make the calculator toggle between scientific and radians using the same button, I made use of the modulus operator. The first time the button is pressed, the remainder will be 1, and the second time pressed, it will be 0. The remainder only toggles between 0 and 1 no matter how many time it is pressed.
+                            </p>
+                            <div class="code_box">
+                                <p>
+                                    private void degRadBtn_Click(object sender, EventArgs e)<br>
+                                    {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;PlaySound();<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;System.Windows.Forms.Button btn = (System.Windows.Forms.Button)sender;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;counterdegrad++;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;if (counterdegrad % 2 != 0)<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;degRadBtn.Text = "DEG";<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;degraLbl.Text = "RAD";<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;else<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;degRadBtn.Text = "RAD";<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;degraLbl.Text = "DEG";<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    }
+
+                                </p>
+                            </div>
+                        </section>
+                        <section class="project_containers_backbone second_box last">
+                        <h1>Full Equation Display</h1>
+                        <p>
+                            Through the use of the tag/text attached with the buttons, I made it possible to display the full equation so that the user is able to see what they have calculated from start to finish. This is implemented for all buttons, and below is an example of how it is coded for all buttons.
+                        </p>
+                        <div class="code_box">
+                            <p>
+                                @txtEqu.Text += btn.Text;
+
+                            </p>
+                        </div>
+                        <img src="/photos/eqn.png" alt="Equation">
+                    </section>
+                    </div>
+                    <section class="intro">
+                        <h1 class="big_text_final">Final Thoughts</h1>
+                        <p class="small_text_final">
+                            Lessons Learned and Insights Gained: Challenges, Skills, and Growth from This Project
+                        </p>
+                        <div class="lets_go_btn" id="about_btn">
+                            <button><a href="calculator.html#lessons"><p>Let's Go!</p></a></button>
+                        </div>
+                    </section>
+                    <section id="lessons">
+                        <h1>Lessons learnt</h1>
+                        <ul>
+                            <li>
+                                <p>- This was the first windows forms app I coded, and to be completely honest, I really enjoyed every second of it. 
+                                </p>
+                            </li>
+                            <br> <br>
+                            <li>
+                                <p>- It was challenging, no doubt. For example, I couldn't think of a way to make the buttons toggle, and I was starting to lose hope. However, I persevered and researched for answers till I made it work.
+                                </p>
+                            </li>
+                            <br><br>
+                            <li>
+                                <p>- This project also had elements of design contained. Users would prefer a visually appealing calculator rather than a plain old calculator, because an attractive interface makes the experience more engaging and intuitive. Focusing on design helped me understand that usability isn’t just about functionality, it’s also about how comfortable and enjoyable it is for users to interact with the tool.
+                                </p>
+                            </li>
+                            <br><br>
+                            <li>
+                                <p>
+                                    - Overall, I am very happy to be able to complete this project and produce a calculator that I am proud of. This experience not only strengthened my coding skills but also taught me the importance of combining functionality, usability, and design to create an effective software tool.
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
+                    <section id="skills">
+                        <h1>Skills demonstrated</h1>
+                        <ul class="top">
+                            <h2>Technical Skills</h2>
+                            <li><p>- <b>Coding / Programming: </b>: Developed all calculator functions using C# in Visual Studio.</p></li>
+                            <br><br>
+                            <li><p>- <b>Interface Design</b>: UCreated a clear, user-friendly interface for ease of use.</p></li>
+                            <li><p>- <b>Testing & Debugging</b>:implemented input validation and resolved errors to ensure smooth functionality.</p></li>
+                        </ul>
+                        <ul>
+                            <h2>Soft skills</h2>
+                                <li>
+                                    <p>- <b>Time Management</b>: structured development steps from planning to testing, completing the project within the intended timeline.                                       
+                                    </p>
+                                </li>
+                                <br><br>
+                                <li><p>- <b>Independent Research</b>: Analyzed popular bubble tea websites, customer preferences, and design trends to make informed design decisions.</p></li>
+                                <br><br>                                
+                                <li><p>- <b>Critical Thinking</b>: Learned new programming techniques to implement features effectively.</p></li>
+                                <br><br>
+                                <li><p>- <b>Keeping cool</b>: This project was tough, and keeping a cool head and figuring out problems was essential.</p></li>
+                        </ul>                        
+                    </section>
+            <footer>
+                <div id="footer_logos">
+                    <ul id="logos">
+                        <li id="email"><a href="mailto:hoginkiat@gmail.com"><img src="photos/44-443542_white-email-logo-transparent-background-removebg-preview.png"></a></li>
+                        <li id="phone"><a href=""><img src="photos/OIP__3_-removebg-preview.png"></a></li>
+                        <li id="linkedin"><a href="https://www.linkedin.com/in/ginkiatho/" target="_blank"><img src="photos/OIP-removebg-preview.png" alt=""></a></li>
+
+                    </ul>
+                </div>
+            </footer>
+        </main>
+        <script>
+        const texts = document.querySelectorAll(".small_text, .big_text");
+
+        window.addEventListener("scroll", () => {
+            const scrollY = window.scrollY;
+
+            texts.forEach(text => {
+                const maxSize = text.classList.contains("big_text") ? 90 : 20;
+                const minSize = text.classList.contains("big_text") ? 32 : 12; //for big text, it goes from 64 to 32, else it goes from 24 to 16
+
+                const size = Math.max(
+                    minSize,
+                    maxSize - scrollY * 0.10
+                );
+
+                text.style.fontSize = `${size}px`;
+            });
+        });
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll(".fade").forEach(el => {
+                observer.observe(el);
+            });
+        </script>
+    </body>
+</html>

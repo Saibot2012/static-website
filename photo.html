@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<html>
+    <body class="fade-in">
+        <main>
+            <nav>
+                <ul>
+                    <li id="logo"><a href="index.html"><img src="/photos/logo16k.jpg" alt="logo image"></a></li>
+                    <li class="marg"><a href="index.html">Home</a></li>
+                    <li class="marg"><a href="about_me.html">About Me</a></li>
+                    <li class="marg"><a href="Projects.html">Projects</a></li>
+                    <li class="marg"><a href="photo.html">Photography</a></li>
+                </ul>
+            </nav>
+            <section class="intro">
+                <h1 class="big_text fade-in">Exploring Creativity</h1>
+                <p class="small_text fade-in">
+                    Outside of school projects, I enjoy creative pursuits like photography. It allows me to explore visual design, refine my attention to detail, and apply creativity to problem-solving. I am into landscape photography, but have recently been trying people and street photography!
+                </p>
+                <br>
+                <div class="lets_go_btn fade-in" id="about_btn">
+                    <button><a href="photo.html#tools"><p>Let's Go!</p></a></button>
+                </div>
+            </section>
+            <section class="maina">
+                <section id="tools" class="photo">
+                        <section class="photo_box">
+                                <img src="/photos/carrier.jpg" alt="HMS Prince Of Wales"><p>HMS Prince Of Wales during their stopover in Singapore!</p>
+                        </section>
+                        <section class="photo_box">
+                                <img src="/photos/yn-7.jpg" alt="Alba Larsen"><p>A picture of a busy street in Yunnan.</p>
+                        </section>
+                        <section class="photo_box ">
+                                <img src="/photos/UK-5.jpg" alt="Lambeth Palace"><p>Lambeth Palace in London. Gothic yet grand.</p>
+                        </section>
+                </section>
+                <section class="photo2">
+                    <section class="photo_box2 ">
+                        <img src="/photos/yn-6.jpg" alt="Mountains"><p>A mountain in Yunnan during winter.</p>
+                    </section>
+                    <section class="photo_box2 rbh">
+                                <img src="/photos/UK-10.jpg" alt="Royal Albert Hall"><p>Royal Albert Hall. The annual festival of remembrance and Mountbatten festival of Music takes place here!</p>
+                    </section>
+                    <section class="photo_box2 ">
+                                <img src="/photos/UK-3.jpg" alt="Imperial War Museum"><p>The Imperial War Museum in London.</p>
+                    </section>
+                </section>
+                <section class="photo g">
+                    <section class="photo_box ">
+                        <img src="/photos/f1-43.jpg" alt="BMW"><p>A very nice BMW</p>
+                    </section>
+                    <section class="photo_box">
+                                <img src="/photos/edii2.jpg" alt="Eiffel Tower"><p>The iconic Eiffel Tower in Paris</p>
+                    </section>
+                    <section class="photo_box ">
+                                <img src="/photos/sea.jpg" alt="cliffside"><p>A cliffside in Taiwan</p>
+                    </section>
+                </section>
+            </section>
+            
+            <div id="modal" class="modal fade-in">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modal-img">
+                <p id="modal-caption"></p>
+            </div>
+            <footer>
+                <div id="footer_logos">
+                    <ul id="logos">
+                        <li id="email"><a href="mailto:hoginkiat@gmail.com"><img src="photos/44-443542_white-email-logo-transparent-background-removebg-preview.png"></a></li>
+                        <li id="phone"><a href=""><img src="photos/OIP__3_-removebg-preview.png"></a></li>
+                        <li id="linkedin"><a href="https://www.linkedin.com/in/ginkiatho/" target="_blank"><img src="photos/OIP-removebg-preview.png" alt=""></a></li>
+
+                    </ul>
+                </div>
+            </footer>
+        </main>
+        <script>
+        const texts = document.querySelectorAll(".small_text, .big_text");
+
+        window.addEventListener("scroll", () => {
+            const scrollY = window.scrollY;
+
+            texts.forEach(text => {
+                const maxSize = text.classList.contains("big_text") ? 90 : 20;
+                const minSize = text.classList.contains("big_text") ? 32 : 12; //for big text, it goes from 64 to 32, else it goes from 24 to 16
+
+                const size = Math.max(
+                    minSize,
+                    maxSize - scrollY * 0.10
+                );
+
+                text.style.fontSize = `${size}px`;
+            });
+        });
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll(".fade").forEach(el => {
+                observer.observe(el);
+            });
+
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("modal-img");
+        const modalCaption = document.getElementById("modal-caption");
+        const boxes = document.querySelectorAll(".photo_box img, .photo_box2 img");
+        const closeBtn = document.querySelector(".close");
+
+        // When an image is clicked
+        boxes.forEach(img => {
+            img.onclick = () => {
+                modal.style.display = "flex";
+                modalImg.src = img.src;
+                modalCaption.textContent = img.nextElementSibling.textContent; // grabs the <p>
+            }
+        });
+
+        // Close the modal
+        closeBtn.onclick = () => {
+            modal.style.display = "none";
+        }
+
+        // Optional: click outside image to close
+        modal.onclick = (e) => {
+            if(e.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+    </body>
+</html>
