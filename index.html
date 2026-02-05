@@ -13,7 +13,10 @@
 <body class="fade-in"> 
     <main>
         <nav>
-            <ul>
+            <button class="my-button" id="my-button">
+                ☰
+            </button>
+            <ul class="menu" id="mynav">
                 <li id="logo"><a href="index.html"><img src="/photos/logo16k.jpg" alt="logo image"></a></li>
                 <li class="marg"><a href="index.html">Home</a></li>
                 <li class="marg"><a href="about_me.html">About Me</a></li>
@@ -51,7 +54,12 @@
             mobileMenu.classList.toggle("active");
         });
             exports.build = series(scssTask, jsTask);
+        const button = document.getElementById("my-button");
+        const nav = document.getElementById("mynav");
 
+        button.addEventListener('click', () => {
+        nav.classList.toggle('show');
+        });
     </script>
 </body>
 </html>

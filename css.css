@@ -3,7 +3,10 @@
     padding:0px;
 
 }
-@media screen and (max-width: 801px){
+@media screen and (max-width: 801px) and (min-width:200px){
+    main{
+        width:520px;
+    }
     .flex1{
         flex-direction: column;
         align-items: center;
@@ -21,8 +24,29 @@
     #two img {
     max-width: 70%;
     height: auto;
+    }
+    #btn{
+        width:50%;
+    }
+    .my-button {
+        display: block;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
 }
-}
+
      
 
 html{
@@ -91,6 +115,9 @@ nav a{
 nav a:hover{
     color:grey;
     transition: color 0.3s ease;
+}
+.my-button {
+    display: none;
 }
 #logo{
     margin-right:auto;
