@@ -3,8 +3,27 @@
     padding:0px;
 
 }
- 
-        
+@media screen and (max-width: 801px){
+    .flex1{
+        flex-direction: column;
+        align-items: center;
+    }
+    #one, #two{
+        flex:none;
+        width:100%;
+    }
+    .header{
+        margin-top: 1em;
+    }
+    #two{
+        order: -1;
+    }
+    #two img {
+    max-width: 70%;
+    height: auto;
+}
+}
+     
 
 html{
         scroll-behavior: smooth;
@@ -96,7 +115,7 @@ section{
     text-align:center
 }
 .header{
-    margin-top:150px;
+    margin-top:2em;
     font-size:clamp(2.5rem, 6vw, 5rem);
 }
 #subtext{
