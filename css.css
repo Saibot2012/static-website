@@ -3,51 +3,7 @@
     padding:0px;
 
 }
-@media screen and (max-width: 801px) and (min-width:200px){
-    main{
-        width:520px;
-    }
-    .flex1{
-        flex-direction: column;
-        align-items: center;
-    }
-    #one, #two{
-        flex:none;
-        width:100%;
-    }
-    .header{
-        margin-top: 1em;
-    }
-    #two{
-        order: -1;
-    }
-    #two img {
-    max-width: 70%;
-    height: auto;
-    }
-    #btn{
-        width:50%;
-    }
-    .my-button {
-        display: block;
-        font-size: 2rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-}
-
-     
+ 
 
 html{
         scroll-behavior: smooth;
@@ -93,6 +49,9 @@ nav{
     margin-right:auto;
     z-index:1000;
 }
+nav button{
+    display:none;
+}
 nav ul{
     list-style-type: none;
     display:flex;
@@ -116,8 +75,8 @@ nav a:hover{
     color:grey;
     transition: color 0.3s ease;
 }
-.my-button {
-    display: none;
+#mobile{
+    display:none;
 }
 #logo{
     margin-right:auto;
@@ -142,7 +101,7 @@ section{
     text-align:center
 }
 .header{
-    margin-top:2em;
+    margin-top:150px;
     font-size:clamp(2.5rem, 6vw, 5rem);
 }
 #subtext{
@@ -948,4 +907,67 @@ margin-top:20px;
 }
 #here:hover{
     color:black;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 801px) and (min-width:200px){ 
+    main{
+         width:fit-content;
+         margin: 0 auto;
+        } 
+    .flex1{
+         flex-direction: column; align-items: center; 
+        } 
+    #one, #two{
+         flex:none; width:100%; 
+        } 
+    .header{
+         margin-top: 1em; 
+        } 
+    #two{
+         order: -1; 
+        } 
+    #two img {
+         max-width: 70%; height: auto; 
+        } 
+    #btn{
+         width:50%; 
+        }
+    #mobile{
+        display:block;
+        text-align: center;
+    }    
+    #mobile img{
+        width:120px;
+    }
+    #logo{
+        display:none;
+    }
+    #mynav{
+        display: none;
+    }
+    #my-button{
+        display:block;
+        margin-left:1em;
+        background-color: black;
+        color:white;
+        border:none;
+        font-size:50px;
+    }
+
+    #mynav.show {
+        padding-bottom:50px;
+        width:100%;
+        background-color: rgba(0, 0, 0, 0.78);
+        position:absolute;
+        display: flex;
+        flex-direction: column;
+    }  
 }
