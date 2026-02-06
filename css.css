@@ -996,6 +996,7 @@ margin-top:20px;
         order: -1;
     }
     #twod h1, #threed h1, #sixd h1{
+        font-size:40px;
         text-align: center;
         margin-right: 40px;
     }
