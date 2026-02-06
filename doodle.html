@@ -9,15 +9,19 @@
 <html>
     <body class="fade-in">
         <main>
-            <nav>
-                <ul>
-                    <li id="logo"><a href="index.html"><img src="/photos/logo16k.jpg" alt="logo image"></a></li>
-                    <li class="marg"><a href="index.html">Home</a></li>
-                    <li class="marg"><a href="about_me.html">About Me</a></li>
-                    <li class="marg"><a href="projects.html">Projects</a></li>
-                    <li class="marg"><a href="photo.html">Photography</a></li>
-                </ul>
-            </nav>
+        <nav>
+            <div id="mobile">
+                <a href="index.html"><img src="/photos/logo16k.jpg" alt="Logo"></a>
+            </div>
+            <button id="my-button">☰</button>
+            <ul id="mynav">
+                <li id="logo"><a href="index.html"><img src="/photos/logo16k.jpg" alt="logo image"></a></li>
+                <li class="marg"><a href="index.html">Home</a></li>
+                <li class="marg"><a href="about_me.html">About Me</a></li>
+                <li class="marg"><a href="projects.html">Projects</a></li>
+                <li class="marg"><a href="photo.html">Photography</a></li>
+            </ul>
+        </nav>
             <section class="intro">
                 <h1 class="big_text fade-in">Doodle</h1>
                 <p class="small_text fade-in dood">
@@ -342,6 +346,12 @@
             document.querySelectorAll(".fade").forEach(el => {
                 observer.observe(el);
             });
+        const button = document.getElementById("my-button");
+        const nav = document.getElementById("mynav");
+
+        button.addEventListener("click", () => {
+            nav.classList.toggle("show");
+        });
         </script>
     </body>
 </html>

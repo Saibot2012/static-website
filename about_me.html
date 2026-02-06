@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About me</title>
     <link rel="stylesheet" href="css.css">
     
@@ -14,7 +11,11 @@
 <body class="fade-in">
     <main>
         <nav>
-            <ul>
+            <div id="mobile">
+                <a href="index.html"><img src="/photos/logo16k.jpg" alt="Logo"></a>
+            </div>
+            <button id="my-button">☰</button>
+            <ul id="mynav">
                 <li id="logo"><a href="index.html"><img src="/photos/logo16k.jpg" alt="logo image"></a></li>
                 <li class="marg"><a href="index.html">Home</a></li>
                 <li class="marg"><a href="about_me.html">About Me</a></li>
@@ -41,7 +42,7 @@
                 <p class="fade">
                     My favorite motto is "Who Dares Wins". It means that those who dare to try often succeeds. I love trying new things to step out of my comfort zone and become comfortable with the uncomfortable.
                 </p>
-                <p class="fade">
+                <p class="fade" id="media">
                     In my free time, I love reading up on coding knowledge, Javascript and play computer games!
                 </p>
             </div>
@@ -55,7 +56,7 @@
                 <p class="fade">
                     Major events that they do are: Beating retreats(every 2 years), Mountbatten Festival of Music(Annually), and Remembrance Sundays(Annually). I do hope to experience at least one of them one day!
                 </p>
-                <p class="fade">
+                <p class="fade" id="media">
                     I was fortunate enough to meet them this June, when the aircraft carrier Prince Of Wales made a stop in Singapore.
                 </p>
             </div>
@@ -75,7 +76,7 @@
                 <p class="fade">
                     The photo on the left was taken at Gardens By The Bay.
                 </p>
-                <p class="fade">
+                <p class="fade" id="media">
                     Click <a href="photo.html" id="here">here</a> to see more of my work.
                 </p>
             </div>
@@ -184,6 +185,12 @@ window.addEventListener("scroll", () => {
 
     document.querySelectorAll(".fade").forEach(el => {
         observer.observe(el);
+    });
+    const button = document.getElementById("my-button");
+    const nav = document.getElementById("mynav");
+
+    button.addEventListener("click", () => {
+        nav.classList.toggle("show");
     });
 
 </script>
