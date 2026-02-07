@@ -964,22 +964,23 @@ margin-top:20px;
         font-size:50px;
     }
 
-    #mynav.show {
+    #mynav.show{
         padding-bottom:50px;
         width:100%;
         background-color: rgba(0, 0, 0, 0.78);
         position:absolute;
         display: flex;
         flex-direction: column;
+        z-index: 9999
     }  
     .intro{
         height: 150vh;
         height: 150svh;
         height: 150dvh;
     }
-    .big_text{
+    .big_text, .big_text_backbone, .big_text_final{
         margin-top: dvh;
-        font-size:90px;
+        font-size:70px;
         text-align: center;
     }
     .small_text{
@@ -1010,4 +1011,73 @@ margin-top:20px;
     .container{
         flex-wrap: wrap;
     }
+    .box_project{
+        width:100%; 
+    }
+    .box_project img{
+        max-width: 100%;
+        height: auto;
+    }
+    .doncha h1{
+        margin-top:2em;
+    }
+    .calc .bottom{
+        margin-bottom: 2em;
+    }
+    .tools_used{
+        flex-direction: column;
+        width: 100%;
+    }
+    .CSS1 img{
+        margin-left:40px;
+    }
+    .CSS1 h2{
+        margin-left:80px;
+    }
+    .VS1 img{
+        margin-left:40px;
+    }
+    .VS1 h2{
+        margin-left:40px;      
+    }
+    .container_box{
+        flex-direction: column;
+        width:100%;
+        align-items:center;
+        gap:2rem;
+        margin-bottom: 2rem;
+    }
+    .container_box h1, .container_box p{
+        width:80%;
+        margin-left: auto;
+        margin-right:auto;
+    }
+    .project_containers{
+        margin: 0
+    }
+    .first_box,
+    .second_box {
+        margin: 0;         /* remove desktop offsets */
+    }
+    .phone{
+        margin-top:2em;
+    }
+    .container_box_backbone{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    .code_box{
+        width:90%;
+    }
+    .project_containers_backbone{
+        width: 100%;
+        margin: 0;
+    }
+    .top{
+        margin-top:40px;
+    }
+
+
 }
