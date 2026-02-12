@@ -182,15 +182,15 @@ footer {
     margin-top: clamp(0rem, 2vh, 10rem);
     text-align: center;
     color:white;
-    font-size: clamp(1rem, 6vw, 9rem);
+    font-size: clamp(0.5rem, 6vw, 8rem);
 
 }
 .small_text{
     text-align: center;
     color:white;
     margin-top:90px;
-    font-size:20px;
-    width:60%;
+    font-size:18px;
+    width:70%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -983,13 +983,12 @@ margin-top:20px;
         height: 150dvh;
     }
     .big_text, .big_text_backbone, .big_text_final{
-        margin-top: dvh;
-        font-size:70px;
+        font-size:60px;
         text-align: center;
     }
     .small_text{
         margin-top: 2em;
-        width:80%;
+        width:90%;
     }
     #about_btn{
         margin-top:2em;

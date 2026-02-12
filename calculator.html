@@ -281,21 +281,27 @@
         <script>
         const texts = document.querySelectorAll(".small_text, .big_text");
 
-        window.addEventListener("scroll", () => {
-            const scrollY = window.scrollY;
+        if (window.innerWidth >= 802) {
 
-            texts.forEach(text => {
-                const maxSize = text.classList.contains("big_text") ? 70 : 20;
-                const minSize = text.classList.contains("big_text") ? 32 : 12; //for big text, it goes from 64 to 32, else it goes from 24 to 16
+            window.addEventListener("scroll", () => {
+                const scrollY = window.scrollY;
 
-                const size = Math.max(
-                    minSize,
-                    maxSize - scrollY * 0.10
-                );
+                texts.forEach(text => {
+                    const maxSize = text.classList.contains("big_text") ? 70 : 20;
+                    const minSize = text.classList.contains("big_text") ? 32 : 18;
 
-                text.style.fontSize = `${size}px`;
+                    const size = Math.max(
+                        minSize,
+                        maxSize - scrollY * 0.05
+                    );
+
+                    text.style.fontSize = `${size}px`;
+                });
             });
-        });
+        }
+        else{
+            
+        }
 
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
