@@ -821,14 +821,20 @@ margin-top:20px;
 .photo{
     display:flex;
     justify-content:center;
-    margin-bottom:300px;
     gap:10px;
+}
+.p{
+        margin-bottom:300px;
+
+}
+.g{
+    margin-bottom: 40px;
 }
 .photo2{
     display:flex;
     justify-content:center;
     margin-bottom:40px;
-    gap:10px;
+    gap:1em;
 }
 .photo_box{
     width:200px;
@@ -836,8 +842,6 @@ margin-top:20px;
     background-color:white;
     cursor:pointer;
     
-}
-.photo-box img{
 }
 .photo p{
     font-size:10px;
@@ -1077,6 +1081,34 @@ margin-top:20px;
     }
     .top{
         margin-top:40px;
+    }
+    .maina{
+        margin-top: 50em;
+        width:90%;
+    }
+    .photo, .photo2{
+        flex-direction: column;
+        margin: 0, auto;
+        text-align: center;
+        align-items: center;
+    }
+    .photo_box, .photo_box2{
+        height:fit-content;
+        width:90%;
+    }
+    .photo img, .photo2 img{
+        height:fit-content;
+    }
+    .photo{
+        margin-top:1em;        
+    }
+    .p{
+        margin-bottom: 600px;
+    }
+    .photo2{
+        position: relative;
+        margin: 0;
+        
     }
 
 

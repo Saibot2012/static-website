@@ -33,14 +33,14 @@
                 </div>
             </section>
             <section class="maina">
-                <section id="tools" class="photo">
+                <section id="tools" class="photo p">
                         <section class="photo_box">
                                 <img src="/photos/carrier.jpg" alt="HMS Prince Of Wales"><p>HMS Prince Of Wales during their stopover in Singapore!</p>
                         </section>
                         <section class="photo_box">
                                 <img src="/photos/yn-7.jpg" alt="Alba Larsen"><p>A picture of a busy street in Yunnan.</p>
                         </section>
-                        <section class="photo_box ">
+                        <section class="photo_box p">
                                 <img src="/photos/UK-5.jpg" alt="Lambeth Palace"><p>Lambeth Palace in London. Gothic yet grand.</p>
                         </section>
                 </section>
@@ -64,6 +64,17 @@
                     </section>
                     <section class="photo_box ">
                                 <img src="/photos/sea.jpg" alt="cliffside"><p>A cliffside in Taiwan</p>
+                    </section>
+                </section>
+                <section class="photo2">
+                    <section class="photo_box2 ">
+                        <img src="/photos/airshow-14.jpg" alt=""><p>Indian Air Force's Sarang display team!</p>
+                    </section>
+                    <section class="photo_box2 rbh">
+                                <img src="/photos/airshow-24.jpg" alt=""><p>US Air Force's F35A on display during the Singapore Airshow 2026.</p>
+                    </section>
+                    <section class="photo_box2 ">
+                                <img src="/photos/airshow-7.jpg" alt=""><p>"The Jupiters" from the Indonesian Air Force, doing an inverted formation flypast.</p>
                     </section>
                 </section>
             </section>
@@ -92,11 +103,11 @@
 
             texts.forEach(text => {
                 const maxSize = text.classList.contains("big_text") ? 70 : 20;
-                const minSize = text.classList.contains("big_text") ? 32 : 12; //for big text, it goes from 64 to 32, else it goes from 24 to 16
+                const minSize = text.classList.contains("big_text") ? 32 : 18; //for big text, it goes from 64 to 32, else it goes from 24 to 16
 
                 const size = Math.max(
                     minSize,
-                    maxSize - scrollY * 0.10
+                    maxSize - scrollY * 0.05
                 );
 
                 text.style.fontSize = `${size}px`;
